@@ -37,6 +37,8 @@ function drawRow(name, roll, date, rate){
     
 }
 
+$("#buttonCreate").html("<button>");
+$("#buttonCancel").html("<button>");
 
 $("#buttonCreate").on("click", function(event){
     inputName = $("#inputName").val().trim();
