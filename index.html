@@ -26,12 +26,22 @@
         <div class = "form-title"> Add an employee</div>
         <div class="add-employee-form"></div>
         <div>Employee Name: <input id="inputName" type = "text"></div>
-        <div>Employee Name: <input id="iputRole" type = "text"></div>
-        <div>Employee Name: <input id="inputStartDate" type = "date"></div>
-        <div>Employee Name: <input id="inputMonthlyRate" type = "number"></div>
+        <div>Employee Role: <input id="iputRole" type = "text"></div>
+        <div>Employee Birthdate: <input id="inputStartDate" type = "date"></div>
+        <div>Employee Monthly Salary: <input id="inputMonthlyRate" type = "number"></div>
         <div><ul><li id="buttonCreate">Create Employee</li><li id="buttonCancel">Cancel</li></ul></div>
     </section>
 
+    <section>
+        <div class="full-member-list">
+            <div class="well">
+                <span class="member-name">${childSnapshot.val().name}</span>
+                <span class="member-email">${childSnapshot.val().email}</span>
+                <span class="member-age">${childSnapshot.val().age}</span>
+            </div>
+        </div>
+    </section>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <script type = "text/javascript" src = "assets/javascript/employeeTable.js"> </script>
     
 </body>
