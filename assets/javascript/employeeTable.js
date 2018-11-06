@@ -9,33 +9,33 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
+database.ref('employees').on("childadded", function(snapshot) {
 
+     var name = snapshot.val().name;
+     var roll = snapshot.val().roll;
+     var date = snapshot.val().date;
+     var rate = snapshot.val().rate;
 
-database.ref('employees').on("value", function(snapshot) {
-
-    // If Firebase has a highPrice and highBidder stored (first case)
-    if (snapshot.child("employee").exists()) {
-        console.log ("found Employee's...");
-
-        // Set the variables for highBidder/highPrice equal to the stored values in firebase.
-
-        console.log (snapshot);
-
-        drawRow();
-    };
+    drawRow(name, roll, date, rate);
 });
 
-function drawRow(){
+function drawRow(name, roll, date, rate){
 
+    trEmployee = document.createElement("tr");
+    tdName = document.createElement("td");
+    tdRoll = document.createElement("td");
+    tdDate = document.createElement("td");
+    tdRate = document.createElement("td");
+
+    tdName.textContent = name;
+    tdRoll.textContent = roll;
+    tdDate.textContent = date;
+    tdRate.textContent = rate;
 
     trEmployee.appendChild(tdName, tdRoll, tdDate, tdRate);
+    document.getElementById("employee-table").append(trEmployee);
+    
 }
-
-trEmployee = document.createElement("tr");
-tdName = document.createElement("td");
-tdRoll = document.createElement("td");
-tdDate = document.createElement("td");
-tdRate = document.createElement("td");
 
 
 $("#buttonCreate").on("click", function(event){
