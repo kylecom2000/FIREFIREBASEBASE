@@ -9,12 +9,14 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-database.ref('employees').on("childadded", function(snapshot) {
+database.ref('employees').on("child_added", function(snapshot) {
 
      var name = snapshot.val().name;
      var roll = snapshot.val().roll;
      var date = snapshot.val().date;
      var rate = snapshot.val().rate;
+
+     Console.log(name, roll, date, rate);
 
     drawRow(name, roll, date, rate);
 });
