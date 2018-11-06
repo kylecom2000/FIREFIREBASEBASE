@@ -9,8 +9,6 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-
-
 database.ref('employees').on("value", function(snapshot) {
 
     // If Firebase has a highPrice and highBidder stored (first case)
