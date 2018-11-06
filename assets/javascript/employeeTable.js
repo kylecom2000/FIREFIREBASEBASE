@@ -9,8 +9,6 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-
-
 database.ref('employees').on("value", function(snapshot) {
 
     // If Firebase has a highPrice and highBidder stored (first case)
@@ -27,11 +25,21 @@ database.ref('employees').on("value", function(snapshot) {
 
 function drawRow(){
 
+
+    trEmployee.appendChild(tdName, tdRoll, tdDate, tdRate);
+}
+
 trEmployee = document.createElement("tr");
 tdName = document.createElement("td");
 tdRoll = document.createElement("td");
 tdDate = document.createElement("td");
 tdRate = document.createElement("td");
 
-trEmployee.appendChild(tdName, tdRoll, tdDate, tdRate);
-}
+
+$("#buttonCancel").on("click", function(event) {
+
+    $("#inputName").val("");
+    $("#inputRole").val("");
+    $("#inputStartDate").val("");
+    $("#inputMonthlyRate").val("");
+});
