@@ -23,11 +23,11 @@ database.ref('employees').on("child_added", function(snapshot) {
 
 function drawRow(name, roll, date, rate){
 
-    trEmployee = document.createElement("tr");
-    tdName = document.createElement("td");
-    tdRoll = document.createElement("td");
-    tdDate = document.createElement("td");
-    tdRate = document.createElement("td");
+    var trEmployee = document.createElement("tr");
+    var tdName = document.createElement("td");
+    var tdRoll = document.createElement("td");
+    var tdDate = document.createElement("td");
+    var tdRate = document.createElement("td");
 
     tdName.textContent = name;
     tdRoll.textContent = roll;
@@ -43,10 +43,10 @@ $("#buttonCreate").html("<button>");
 $("#buttonCancel").html("<button>");
 
 $("#buttonCreate").on("click", function(event){
-    inputName = $("#inputName").val().trim();
-    inputRole = $("#inputRole").val().trim();
-    inputStartDate = $("#inputStartDate").val().trim();
-    inputMonthlyRate = $("#inputMonthlyRate").val().trim();
+    var inputName = $("#inputName").val().trim();
+    var inputRole = $("#inputRole").val().trim();
+    var inputStartDate = $("#inputStartDate").val().trim();
+    var inputMonthlyRate = $("#inputMonthlyRate").val().trim();
 
     database.ref("employees").push({
         name: inputName,
