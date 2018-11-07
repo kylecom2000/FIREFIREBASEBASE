@@ -55,6 +55,7 @@ $("#buttonCreate").on("click", function(event){
         rate: inputMonthlyRate
     })
 
+    drawRow(inputName, inputRole, inputStartDate, inputMonthlyRate);
 
     $("#inputName").val("");
     $("#inputRole").val("");
