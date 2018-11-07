@@ -27,14 +27,19 @@ function drawRow(name, roll, date, rate){
     var tdName = document.createElement("td");
     var tdRoll = document.createElement("td");
     var tdDate = document.createElement("td");
+    var tdMonths = document.createElement("td");
     var tdRate = document.createElement("td");
+    var tdTotalPay = document.createElement("td");
 
     tdName.textContent = name;
     tdRoll.textContent = roll;
     tdDate.textContent = date;
     tdRate.textContent = rate;
 
-    trEmployee.append(tdName, tdRoll, tdDate, tdRate);
+    tdMonths.textContent = "";
+    tdTotalPay.textContent = "";
+
+    trEmployee.append(tdName, tdRoll, tdDate, tdMonths, tdRate, tdTotalPay);
     document.getElementById("employee-table").append(trEmployee);
     
 }
