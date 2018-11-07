@@ -16,7 +16,7 @@ database.ref('employees').on("child_added", function(snapshot) {
      var date = snapshot.val().date;
      var rate = snapshot.val().rate;
 
-     Console.log(name, roll, date, rate);
+     console.log(name, roll, date, rate);
 
     drawRow(name, roll, date, rate);
 });
@@ -34,7 +34,7 @@ function drawRow(name, roll, date, rate){
     tdDate.textContent = date;
     tdRate.textContent = rate;
 
-    trEmployee.appendChild(tdName, tdRoll, tdDate, tdRate);
+    trEmployee.append(tdName, tdRoll, tdDate, tdRate);
     document.getElementById("employee-table").append(trEmployee);
     
 }
